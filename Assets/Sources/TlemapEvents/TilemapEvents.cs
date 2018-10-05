@@ -46,7 +46,12 @@ namespace NTW.TilemapEvents
             * This makes sure that the event tiles are not shown
             * in the scene during the game mode.
             */
-            if (!editor) eventsRenderer.sortingLayerName = "Default";
+            if (!editor)
+            {
+                eventsRenderer.sortingLayerName = "Default";
+                eventsRenderer.sortingOrder = -9999;
+            }
+
             eventsCollider = GetComponent<TilemapCollider2D>();
             /**
              * This makes sure that the event won't block the player
